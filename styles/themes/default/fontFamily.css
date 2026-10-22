@@ -1,0 +1,5 @@
+@theme {
+  --font-*: initial;
+  --font-base: var(--font-hanken-grotesk);
+  --font-accent: var(--font-jetbrains-mono);
+}

@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "./themes/default/theme.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-primary-on-dark-text);
+}
+
+body {
+  min-width: 20rem;
+}
+
+@utility font-display {
+  font-weight: 900;
+  font-stretch: condensed;
+  text-transform: uppercase;
+}
+
+@utility horizontal-padding {
+  @apply px-4 md:px-10;
+}
+
+@utility site-size {
+  @apply mx-auto w-full max-w-[120rem];
+}
+
+@utility vertical-padding {
+  @apply py-20 md:py-28;
+}
+
+@utility common-section-gap {
+  @apply gap-8 lg:gap-12 xl:gap-16;
+}
+
+.second-title {
+  @apply font-display text-6xl leading-[0.75] tracking-[-.05em] lg:text-7xl xl:text-8xl;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .video-frame media-controls,
+  .video-frame .video-controls-content {
+    pointer-events: none !important;
+    visibility: hidden !important;
+    translate: 0 var(--media-hidden-offset) !important;
+    scale: var(--media-hidden-scale) !important;
+    opacity: 0 !important;
+  }
+
+  .video-frame:hover media-controls,
+  .video-frame:hover .video-controls-content,
+  .video-frame:focus-within media-controls,
+  .video-frame:focus-within .video-controls-content {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    translate: 0 0 !important;
+    scale: 1 !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .video-frame media-controls,
+  .video-frame .video-controls-content {
+    pointer-events: auto !important;
+    visibility: visible !important;
+    translate: 0 0 !important;
+    scale: 1 !important;
+    opacity: 1 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+
+  @media (max-width: 900px) {
+    width: 6px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted-ink-opaque);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-ink);
+  border-radius: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-soft-white);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
