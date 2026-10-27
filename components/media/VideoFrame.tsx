@@ -2,7 +2,9 @@
 
 import { DemoImage } from "@/components/media/DemoImage";
 import { Video, VideoPlayer, VideoSkin } from "@videojs/react/video";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import clsx from "clsx";
+import { Play } from "lucide-react";
+import { useState, type CSSProperties } from "react";
 
 type VideoFrameProps = {
   src: string;
@@ -31,44 +33,77 @@ export function VideoFrame({
   className = "",
   sizes = "(min-width: 768px) 90vw, 100vw",
 }: VideoFrameProps) {
-  const frameRef = useRef<HTMLElement>(null);
-  const [isNearViewport, setIsNearViewport] = useState(false);
-
-  useEffect(() => {
-    const frame = frameRef.current;
-    if (!frame || !src) return;
-
-    if (!("IntersectionObserver" in window)) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setIsNearViewport(true);
-        observer.disconnect();
-      },
-      { rootMargin: "240px 0px" },
-    );
-
-    observer.observe(frame);
-    return () => observer.disconnect();
-  }, [src]);
+  const [isVideoMounted, setIsVideoMounted] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   return (
     <figure
-      ref={frameRef}
-      className={`video-frame group relative cursor-pointer overflow-hidden bg-muted-ink/20 ${className}`}
+      className={`video-frame group relative isolate h-full min-h-0 w-full cursor-pointer overflow-hidden border border-soft-white/5 bg-muted-ink/20 ${className}`}
     >
-      {src && isNearViewport ? (
-        <VideoPlayer>
-          <VideoSkin style={VIDEO_SKIN_STYLE}>
-            <Video src={src} preload="metadata" playsInline aria-label={alt} />
-          </VideoSkin>
-        </VideoPlayer>
-      ) : (
-        <DemoImage src={fallbackSrc} alt={alt} sizes={sizes} />
+      <DemoImage src={fallbackSrc} alt={alt} sizes={sizes} />
+      {src && isVideoMounted && (
+        <div
+          className={clsx(
+            "absolute inset-0 z-[1] transition-opacity duration-500 ease-out",
+            {
+              "opacity-0": !isVideoVisible,
+              "opacity-100": isVideoVisible,
+            },
+          )}
+        >
+          <VideoPlayer>
+            <VideoSkin style={VIDEO_SKIN_STYLE}>
+              <Video
+                src={src}
+                poster={fallbackSrc || undefined}
+                preload="none"
+                muted
+                playsInline
+                autoPlay
+                onCanPlay={() => setIsVideoVisible(true)}
+                onPause={() => setIsVideoPlaying(false)}
+                onPlay={() => setIsVideoPlaying(true)}
+                aria-label={alt}
+                className="h-full w-full object-cover"
+              />
+            </VideoSkin>
+          </VideoPlayer>
+        </div>
       )}
-      <div className="pointer-events-none absolute inset-x-0 -top-10 z-10 h-2/3 bg-gradient-to-b from-ink/95 via-ink/40 to-transparent" />
-      <figcaption className="pointer-events-none absolute left-2 top-2 z-10 px-2 py-1 font-accent text-[0.65rem] uppercase tracking-[0.14em] text-primary-on-dark-text md:left-4 md:top-4 md:px-1 md:py-1">
+      {src && !isVideoMounted && (
+        <button
+          type="button"
+          aria-label={`Reproducir ${label}`}
+          className="absolute inset-0 z-[2] flex cursor-pointer items-center justify-center"
+          onClick={() => setIsVideoMounted(true)}
+        >
+          <span className="flex size-14 items-center justify-center rounded-full bg-[#fff] text-ink transition-transform duration-300 group-hover:scale-105 border border-muted-ink/20 drop-shadow-md">
+            <Play
+              aria-hidden="true"
+              className="ml-1 size-5 fill-current stroke-0"
+            />
+          </span>
+        </button>
+      )}
+      <div
+        className={clsx(
+          "pointer-events-none absolute inset-x-0 -top-10 z-10 h-2/3 bg-gradient-to-b from-ink/70 to-transparent transition-opacity duration-300",
+          {
+            "opacity-0 group-hover:opacity-100":
+              isVideoMounted && isVideoPlaying,
+          },
+        )}
+      />
+      <figcaption
+        className={clsx(
+          "pointer-events-none absolute left-2 top-2 z-10 px-2 py-1 font-accent text-[0.65rem] uppercase tracking-[0.14em] text-soft-white/85 transition-opacity duration-300 md:left-4 md:top-4 md:px-1 md:py-1",
+          {
+            "opacity-0 group-hover:opacity-100":
+              isVideoMounted && isVideoPlaying,
+          },
+        )}
+      >
         {label}
       </figcaption>
     </figure>

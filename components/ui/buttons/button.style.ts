@@ -11,7 +11,7 @@ export const buttonClass = tv({
       light: "bg-soft-white text-ink",
       dark: "bg-ink text-primary-on-dark-text",
       outline:
-        "border border-primary-on-dark-text/40 text-primary-on-dark-text hover:bg-primary-on-dark-text hover:text-ink",
+        "border border-primary-on-dark-text/40 text-primary-on-dark-text",
     },
 
     disabled: {

@@ -4,11 +4,52 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { useScrollAnimations } from "@/hooks/gsap/useScrollAnimations";
 import { useRef } from "react";
 
+const PRODUCT_BLOCKS = [
+  {
+    label: "Tu presencia digital",
+    description: (
+      <>
+        Ink Demo presenta una <span className="text-ink">web pública</span> y un{" "}
+        <span className="text-ink">administrador</span> pensado para el día a
+        día de un estudio de tatuajes. Mostrá tu trabajo, tus artistas, tus
+        servicios y datos de contacto con una experiencia pensada para orientar
+        a cada visitante.
+      </>
+    ),
+  },
+  {
+    label: "Una experiencia visual",
+    description: (
+      <>
+        Cada <span className="text-ink">animación</span> y{" "}
+        <span className="text-ink">detalle visual</span> está pensado para que
+        recorrer tu sitio se sienta único, fluido e intuitivo. Las transiciones
+        acompañan el contenido, guían la atención y convierten cada sección en
+        una <span className="text-ink">experiencia memorable</span>.
+      </>
+    ),
+  },
+  {
+    label: "Una estructura adaptable",
+    description: (
+      <>
+        La experiencia se construye a mano alrededor de tu{" "}
+        <span className="text-ink">identidad</span>, tus contenidos y la forma
+        en que trabaja tu equipo. Puede adaptarse a cada estudio, con{" "}
+        <span className="text-ink">contenidos editables</span>,{" "}
+        <span className="text-ink">identidad propia</span> y un{" "}
+        <span className="text-ink">modo oscuro/claro</span>.
+      </>
+    ),
+  },
+] as const;
+
 export function ProductOverview() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useScrollAnimations({
     scope: sectionRef,
+    direction: "bottom",
     animations: {
       ".overview-line": {
         from: { y: 50, opacity: 0 },
@@ -20,7 +61,40 @@ export function ProductOverview() {
           ease: "power3.out",
         },
         individual: true,
-        scrollTrigger: { start: "top 90%", end: "+=180", scrub: 1 },
+      },
+      ".overview-block": {
+        from: { y: 40, opacity: 0 },
+        to: {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.16,
+          ease: "power3.out",
+        },
+        individual: true,
+        staggered: true,
+      },
+      ".overview-title-line": {
+        from: { yPercent: 115, rotate: 5, opacity: 0 },
+        to: {
+          yPercent: 0,
+          rotate: 0,
+          opacity: 1,
+          duration: 1.1,
+          stagger: 0.18,
+          ease: "power4.out",
+        },
+        individual: true,
+      },
+      ".overview-label": {
+        from: { y: 18, scale: 0.98, opacity: 0 },
+        to: {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        },
       },
     },
   });
@@ -29,41 +103,58 @@ export function ProductOverview() {
     <section
       id="producto"
       ref={sectionRef}
-      className="bg-paper text-primary-on-light-text"
+      className="relative isolate overflow-hidden bg-soft-white text-primary-on-light-text"
     >
-      <div className="site-size horizontal-padding vertical-padding">
-        <SectionLabel>Una herramienta adaptable</SectionLabel>
-        <div className="mt-12 grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
-          <p className="overview-line font-display text-4xl uppercase leading-[0.9] opacity-0 md:text-5xl">
-            Más que una web.
-            <br />
-            Es una experiencia
-            <br />
-            <span className="text-secondary-on-light-text/50">
-              visual y fluida.
+      <div className="site-size relative z-10 horizontal-padding vertical-padding">
+        <SectionLabel className="overview-label opacity-0">
+          Diseño & Adaptabilidad
+        </SectionLabel>
+        <div className="grid gap-y-6 gap-x-24 2xl:grid-cols-[0.7fr_1.3fr] 2xl:items-end">
+          <h2 className="font-display text-3xl uppercase leading-[0.9] md:text-5xl">
+            <span className="block overflow-y-clip">
+              <span className="overview-title-line block opacity-0">
+                Mas que una interfaz
+              </span>
             </span>
-          </p>
-          <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-secondary-on-light-text md:text-xl">
-            <p className="overview-line opacity-0">
-              Ink Demo presenta una{" "}
-              <span className="text-ink">web pública</span> y un{" "}
-              <span className="text-ink">administrador privado</span> pensado
-              para el día a día de un{" "}
-              <span className="text-ink">estudio de tatuajes</span>.
-            </p>
-            <p className="overview-line opacity-0">
-              Cada <span className="text-ink">entrada</span>,{" "}
-              <span className="text-ink">transición</span> y{" "}
-              <span className="text-ink">detalle visual</span> está pensado para
-              que recorrer tu sitio se sienta natural, fluido y memorable.
-            </p>
-            <p className="overview-line opacity-0">
-              La experiencia se construye a mano alrededor de tu{" "}
-              <span className="text-ink">identidad</span>, tus{" "}
-              <span className="text-ink">contenidos</span> y la forma única en
-              que trabaja tu equipo.
+            <span className="block overflow-y-clip">
+              <span className="overview-title-line block opacity-0">
+                Es una experiencia
+              </span>
+            </span>
+            <span className="block overflow-y-clip">
+              <span className="overview-title-line block text-secondary-on-light-text/50 opacity-0">
+                inmersiva
+              </span>
+            </span>
+            <span className="block overflow-y-clip">
+              <span className="overview-title-line block opacity-0">
+                para tu estudio
+              </span>
+            </span>
+          </h2>
+          <div className="max-w-xl">
+            <p className="overview-line text-base leading-relaxed text-secondary-on-light-text md:text-xl">
+              Una{" "}
+              <span className="text-ink">experiencia pública inmersiva</span> y
+              un <span className="text-ink">administrador privado</span> para
+              gestionar cada parte de tu estudio
             </p>
           </div>
+        </div>
+        <div className="mt-14 grid gap-5 md:gap-8 lg:grid-cols-3">
+          {PRODUCT_BLOCKS.map((block) => (
+            <article
+              key={block.label}
+              className="overview-block bg-muted-ink/10 p-5 opacity-0 md:p-6"
+            >
+              <h3 className="font-display text-2xl uppercase leading-none text-secondary-on-light-text md:text-3xl">
+                {block.label}
+              </h3>
+              <p className="mt-4 max-w-md text-base leading-relaxed text-secondary-on-light-text md:text-lg">
+                {block.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

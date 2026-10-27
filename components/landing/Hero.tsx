@@ -1,13 +1,21 @@
 "use client";
 
 import { DemoImage } from "@/components/media/DemoImage";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { landingMedia, mediaAlt } from "@/config/media";
 import { useScrollAnimations } from "@/hooks/gsap/useScrollAnimations";
 import { useRef } from "react";
 
-const HERO_MEDIA = landingMedia.hero;
-const HERO_MEDIA_SECONDARY = landingMedia.websiteOverview;
+const HERO_MEDIA = {
+  primary: {
+    src: "/images/sections/hero/web.png",
+    alt: "Vista de la web pública de un estudio de tatuajes",
+  },
+  secondary: {
+    src: "/images/sections/hero/admin.png",
+    alt: "Vista del administrador privado de la web pública de un estudio de tatuajes",
+  },
+} as const;
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,14 +36,55 @@ export function Hero() {
           ease: "power4.out",
         },
       },
+      ".hero-label": {
+        disableScrollTrigger: true,
+        from: { y: 18, scale: 0.98, opacity: 0 },
+        to: {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          delay: 0.05,
+          ease: "power3.out",
+        },
+      },
+      ".hero-cta": {
+        disableScrollTrigger: true,
+        from: { y: 18, scale: 0.98, opacity: 0 },
+        to: {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          delay: 0.6,
+          ease: "power3.out",
+        },
+      },
+      ".hero-title-line": {
+        individual: true,
+        staggered: true,
+        disableScrollTrigger: true,
+        from: { yPercent: 115, rotate: 5, opacity: 0 },
+        to: {
+          yPercent: 0,
+          rotate: 0,
+          opacity: 1,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "power4.out",
+        },
+      },
       ".hero-media": {
+        individual: true,
+        staggered: true,
         disableScrollTrigger: true,
         from: { scale: 1.15, opacity: 0 },
         to: {
           scale: 1,
           opacity: 1,
           duration: 1.5,
-          delay: 0.35,
+          delay: 0.3,
+          stagger: 0.3,
           ease: "power3.out",
         },
       },
@@ -48,50 +97,55 @@ export function Hero() {
       className="relative flex h-svh min-h-svh flex-col bg-ink"
     >
       <div className="site-size horizontal-padding flex min-h-0 flex-1 flex-col justify-center overflow-hidden py-6 sm:py-10 md:py-8 lg:py-16">
-        <p className="hero-reveal mb-3 font-accent text-[0.55rem] uppercase tracking-[0.14em] text-secondary-on-dark-text opacity-0 sm:mb-6 sm:text-[0.65rem] sm:tracking-[0.18em]">
+        <SectionLabel dark className="hero-label opacity-0">
           Producto digital para estudios de tatuajes
-        </p>
-        <div className="grid min-h-0 items-center gap-10 md:gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12 xl:grid-cols-[0.8fr_1.2fr] xl:gap-30">
-          <div>
-            <h1 className="font-display text-[clamp(4rem,10vw,9rem)] leading-[0.72] tracking-[-.07em] text-primary-on-dark-text">
-              <span className="hero-reveal block opacity-0">Tu estudio</span>
-              <span className="hero-reveal ml-[12%] block text-paper-deep opacity-0">
-                bajo control.
+        </SectionLabel>
+        <div className="grid min-h-0 items-center gap-10 md:gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12 xl:grid-cols-[0.8fr_1.2fr] xl:gap-x-30 xl:gap-y-10">
+          <div className="lg:col-start-1 lg:row-start-1">
+            <h1 className="font-display text-[clamp(4rem,10vw,9rem)] leading-[0.74] tracking-[-.07em] text-primary-on-dark-text">
+              <span className="block overflow-y-clip">
+                <span className="hero-title-line block opacity-0">
+                  Tu estudio
+                </span>
+              </span>
+              <span className="ml-[12%] block overflow-y-clip text-paper-deep">
+                <span className="hero-title-line block opacity-0">
+                  bajo control.
+                </span>
               </span>
             </h1>
-            <p className="hero-reveal mt-3 max-w-md text-base sm:text-lg md:text-xl leading-[1.35] text-secondary-on-dark-text opacity-0 sm:mt-6 sm:leading-relaxed ">
-              Una experiencia digital con identidad propia.
-              <br />
-              Tu equipo la actualiza sin depender del código.
+            <p className="hero-reveal mt-3 max-w-[29rem] text-base md:text-xl leading-[1.35] text-secondary-on-dark-text opacity-0 sm:mt-6 sm:leading-relaxed ">
+              Una web con identidad propia, animaciones únicas y el control para
+              actualizarla cuando quieras
             </p>
-            <div className="hero-reveal mt-4 opacity-0 sm:mt-6">
-              <WhatsAppButton>Adaptémoslo a tu estudio</WhatsAppButton>
-            </div>
           </div>
-          <div className="hero-media relative min-h-0 min-w-0 w-full h-[38svh] opacity-0 md:aspect-[2/1] md:h-auto lg:aspect-[4/5] lg:max-h-[34rem]">
-            <div className="absolute left-0 top-[3%] z-10 aspect-[16/10] w-[70%] -rotate-[2deg] overflow-hidden bg-muted-ink/20 shadow-2xl md:w-[46%] lg:left-[2%] lg:top-[18%] lg:w-[54%] lg:-rotate-[4deg] xl:left-[4%] xl:w-[46%]">
+          <div className="relative min-h-0 min-w-0 w-full aspect-[16/9] md:mt-4 md:aspect-[2.5/1] md:h-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:aspect-[4/5] lg:max-h-[34rem]">
+            <div className="hero-media absolute left-0 top-[3%] z-10 aspect-[16/9] w-[56%] -rotate-[2deg] overflow-hidden bg-muted-ink/20 opacity-0 shadow-2xl lg:top-[18%] lg:-rotate-[4deg] border border-soft-white/5">
               <DemoImage
-                src={HERO_MEDIA}
-                alt={mediaAlt.hero}
+                src={HERO_MEDIA.primary.src}
+                alt={HERO_MEDIA.primary.alt}
                 priority
                 sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 32vw, 70vw"
               />
-              <div className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-2/3 bg-gradient-to-b from-ink/90 via-ink/40 to-transparent" />
-              <span className="absolute right-2 top-2 md:right-4 md:top-4 z-20 text-right font-accent text-[0.6rem] uppercase tracking-[0.16em] text-soft-white/70">
+              <div className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-2/3 bg-gradient-to-b from-ink/70 to-transparent" />
+              <span className="absolute right-2 top-2 md:right-4 md:top-4 z-20 text-right font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.16em] text-soft-white/85">
                 Web pública
               </span>
             </div>
-            <div className="absolute left-[20%] top-[42%] z-20 aspect-[16/10] w-[70%] rotate-[1deg] overflow-hidden bg-muted-ink/20 shadow-2xl md:left-[32%] md:top-[18%] md:w-[46%] lg:left-[38%] lg:top-[34%] lg:w-[54%] xl:left-[42%] xl:w-[46%]">
+            <div className="hero-media absolute right-0 top-[42%] z-20 aspect-[16/9] w-[56%] rotate-[1deg] overflow-hidden bg-muted-ink/20 opacity-0 shadow-2xl md:top-[18%] lg:top-[34%] border border-soft-white/5">
               <DemoImage
-                src={HERO_MEDIA_SECONDARY}
-                alt={mediaAlt.websiteOverview}
+                src={HERO_MEDIA.secondary.src}
+                alt={HERO_MEDIA.secondary.alt}
                 sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 32vw, 70vw"
               />
-              <div className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-2/3 bg-gradient-to-b from-ink/90 via-ink/40 to-transparent" />
-              <span className="absolute right-2 top-2 md:right-4 md:top-4 z-20 text-right font-accent text-[0.6rem] uppercase tracking-[0.16em] text-soft-white/70">
+              <div className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-2/3 bg-gradient-to-b from-ink/70 to-transparent" />
+              <span className="absolute right-2 top-2 md:right-4 md:top-4 z-20 text-right font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.16em] text-soft-white/85">
                 Administrador privado
               </span>
             </div>
+          </div>
+          <div className="hero-cta mt-4 opacity-0 sm:mt-6 lg:col-start-1 lg:row-start-2">
+            <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
           </div>
         </div>
       </div>

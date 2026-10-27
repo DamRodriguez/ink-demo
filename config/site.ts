@@ -26,7 +26,7 @@ export const siteConfig = {
 
 export const contactUrls = {
   whatsapp: `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
-    "Hola, quiero conocer Ink Demo.",
+    "Hola! Quiero conocer Ink Demo.",
   )}`,
   publicWebsite: siteConfig.publicWebsiteUrl,
 } as const;
