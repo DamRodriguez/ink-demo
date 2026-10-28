@@ -141,7 +141,7 @@ export function ProductOverview() {
             </p>
           </div>
         </div>
-        <div className="mt-14 grid gap-5 md:gap-8 lg:grid-cols-3">
+        <div className="mt-10 md:mt-15 grid gap-5 md:gap-8 lg:grid-cols-3">
           {PRODUCT_BLOCKS.map((block) => (
             <article
               key={block.label}

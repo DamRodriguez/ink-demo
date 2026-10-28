@@ -1,6 +1,7 @@
 "use client";
 
 import { DemoImage } from "@/components/media/DemoImage";
+import { MediaOverlay } from "@/components/media/MediaOverlay";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { useScrollAnimations } from "@/hooks/gsap/useScrollAnimations";
@@ -111,12 +112,12 @@ export function Hero() {
                 </span>
               </span>
             </h1>
-            <p className="hero-reveal mt-3 max-w-[29rem] text-base md:text-xl leading-[1.35] text-secondary-on-dark-text opacity-0 sm:mt-6 sm:leading-relaxed ">
+            <p className="hero-reveal ml-[12%] mt-4 max-w-[16rem] sm:max-w-[29rem] text-base md:text-xl leading-[1.35] text-secondary-on-dark-text opacity-0 sm:mt-6 sm:leading-relaxed ">
               Una web con identidad propia, animaciones únicas y el control para
               actualizarla cuando quieras
             </p>
           </div>
-          <div className="relative min-h-0 min-w-0 w-full aspect-[16/9] md:mt-4 md:aspect-[2.5/1] md:h-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:aspect-[4/5] lg:max-h-[34rem]">
+          <div className="relative min-h-0 min-w-0 w-full aspect-[16/9] md:mt-4 md:aspect-[3/1] md:h-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:aspect-[4/5] lg:max-h-[34rem]">
             <div className="hero-media absolute left-0 top-[3%] z-10 aspect-[16/9] w-[56%] -rotate-[2deg] overflow-hidden bg-muted-ink/20 opacity-0 shadow-2xl lg:top-[18%] lg:-rotate-[4deg] border border-soft-white/5">
               <DemoImage
                 src={HERO_MEDIA.primary.src}
@@ -124,10 +125,7 @@ export function Hero() {
                 priority
                 sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 32vw, 70vw"
               />
-              <div className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-2/3 bg-gradient-to-b from-ink/70 to-transparent" />
-              <span className="absolute right-2 top-2 md:right-4 md:top-4 z-20 text-right font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.16em] text-soft-white/85">
-                Web pública
-              </span>
+              <MediaOverlay label="Web pública" position="top-right" />
             </div>
             <div className="hero-media absolute right-0 top-[42%] z-20 aspect-[16/9] w-[56%] rotate-[1deg] overflow-hidden bg-muted-ink/20 opacity-0 shadow-2xl md:top-[18%] lg:top-[34%] border border-soft-white/5">
               <DemoImage
@@ -135,13 +133,13 @@ export function Hero() {
                 alt={HERO_MEDIA.secondary.alt}
                 sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 32vw, 70vw"
               />
-              <div className="pointer-events-none absolute inset-x-0 -top-2 z-10 h-2/3 bg-gradient-to-b from-ink/70 to-transparent" />
-              <span className="absolute right-2 top-2 md:right-4 md:top-4 z-20 text-right font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.16em] text-soft-white/85">
-                Administrador privado
-              </span>
+              <MediaOverlay
+                label="Administrador privado"
+                position="top-right"
+              />
             </div>
           </div>
-          <div className="hero-cta mt-4 opacity-0 sm:mt-6 lg:col-start-1 lg:row-start-2">
+          <div className="hero-cta sm:ml-[12%] mt-4 opacity-0 md:mt-8 lg:col-start-1 lg:row-start-2">
             <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
           </div>
         </div>

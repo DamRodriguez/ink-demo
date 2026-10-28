@@ -1,6 +1,7 @@
 "use client";
 
 import { DemoImage } from "@/components/media/DemoImage";
+import { MediaOverlay } from "@/components/media/MediaOverlay";
 import { Video, VideoPlayer, VideoSkin } from "@videojs/react/video";
 import clsx from "clsx";
 import { Play } from "lucide-react";
@@ -86,26 +87,7 @@ export function VideoFrame({
           </span>
         </button>
       )}
-      <div
-        className={clsx(
-          "pointer-events-none absolute inset-x-0 -top-10 z-10 h-2/3 bg-gradient-to-b from-ink/70 to-transparent transition-opacity duration-300",
-          {
-            "opacity-0 group-hover:opacity-100":
-              isVideoMounted && isVideoPlaying,
-          },
-        )}
-      />
-      <figcaption
-        className={clsx(
-          "pointer-events-none absolute left-2 top-2 z-10 px-2 py-1 font-accent text-[0.65rem] uppercase tracking-[0.14em] text-soft-white/85 transition-opacity duration-300 md:left-4 md:top-4 md:px-1 md:py-1",
-          {
-            "opacity-0 group-hover:opacity-100":
-              isVideoMounted && isVideoPlaying,
-          },
-        )}
-      >
-        {label}
-      </figcaption>
+      <MediaOverlay label={label} hidden={isVideoMounted && isVideoPlaying} />
     </figure>
   );
 }

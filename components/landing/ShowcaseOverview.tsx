@@ -95,7 +95,7 @@ export function ShowcaseOverview() {
           de recibir consultas.
         </p>
       </div>
-      <div className="mt-12 w-full space-y-5">
+      <div className="mt-10 md:mt-15 w-full space-y-5">
         <div className="grid gap-5 md:items-stretch md:grid-cols-[1.65fr_0.55fr]">
           <div className="showcase-item aspect-[16/9] md:self-start">
             <VideoFrame
