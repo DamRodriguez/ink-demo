@@ -27,7 +27,7 @@ export function MediaOverlay({
       />
       <span
         className={clsx(
-          "pointer-events-none absolute z-10 font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.14em] text-soft-white/85 transition-opacity duration-300 p-2 md:p-4",
+          "pointer-events-none absolute z-10 font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.14em] text-soft-white/85 transition-opacity duration-300 m-2 md:m-4 backdrop-blur-[0.1rem] ",
           {
             "left-0 top-0": position === "top-left",
             "right-0 top-0": position === "top-right",
