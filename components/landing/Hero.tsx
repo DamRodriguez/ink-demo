@@ -93,10 +93,7 @@ export function Hero() {
   });
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex min-h-dvh flex-col bg-ink"
-    >
+    <section ref={sectionRef} className="relative flex h-screen flex-col bg-ink">
       <div className="site-size horizontal-padding flex min-h-0 flex-1 flex-col justify-center overflow-hidden py-6 sm:py-10 md:py-8 lg:py-16">
         <SectionLabel dark className="hero-label opacity-0">
           Producto digital para estudios de tatuajes

@@ -61,7 +61,7 @@ export function FinalCta() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-dvh grid grid-rows-[1fr_auto] items-center overflow-hidden bg-ink text-primary-on-dark-text horizontal-padding"
+      className="h-screen grid grid-rows-[1fr_auto] items-center overflow-hidden bg-ink text-primary-on-dark-text horizontal-padding"
     >
       <div className="site-size flex flex-col items-center justify-center text-center vertical-padding mx-auto">
         <SectionLabel dark className="cta-label opacity-0">
