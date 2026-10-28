@@ -32,10 +32,10 @@ export function AdminFeatureBlock({
         </p>
       </div>
       <div className="mt-8 grid gap-5 md:grid-cols-3">
-        {media.map((item) => (
+        {media.map((item, index) => (
           <div
-            key={item.label}
-            className={`showcase-media showcase-media-${mediaGroup} aspect-[4/3]`}
+            key={item.label + index}
+            className={`showcase-media showcase-media-${mediaGroup} aspect-[16/9]`}
           >
             <MediaFrame
               src={item.src}

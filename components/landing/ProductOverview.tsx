@@ -6,31 +6,31 @@ import { useRef } from "react";
 
 const PRODUCT_BLOCKS = [
   {
-    label: "Tu presencia digital",
+    label: "Presencia digital",
     description: (
       <>
         Ink Demo presenta una <span className="text-ink">web pública</span> y un{" "}
         <span className="text-ink">administrador</span> pensado para el día a
-        día de un estudio de tatuajes. Mostrá tu trabajo, tus artistas, tus
-        servicios y datos de contacto con una experiencia pensada para orientar
-        a cada visitante.
+        día de un estudio de tatuajes. Mostrá tu imágen, trabajo, artistas,
+        servicios y datos de contacto con una experiencia pensada para llamar la
+        atención de cada visitante.
       </>
     ),
   },
   {
-    label: "Una experiencia visual",
+    label: "Experiencia visual",
     description: (
       <>
         Cada <span className="text-ink">animación</span> y{" "}
-        <span className="text-ink">detalle visual</span> está pensado para que
-        recorrer tu sitio se sienta único, fluido e intuitivo. Las transiciones
-        acompañan el contenido, guían la atención y convierten cada sección en
-        una <span className="text-ink">experiencia memorable</span>.
+        <span className="text-ink">detalle</span> está pensado para que recorrer
+        tu sitio se sienta único, fluido e intuitivo. Las transiciones acompañan
+        el contenido, guían la atención y convierten cada sección en una{" "}
+        <span className="text-ink">experiencia única</span>.
       </>
     ),
   },
   {
-    label: "Una estructura adaptable",
+    label: "Estructura adaptable",
     description: (
       <>
         La experiencia se construye a mano alrededor de tu{" "}
@@ -141,11 +141,11 @@ export function ProductOverview() {
             </p>
           </div>
         </div>
-        <div className="mt-10 md:mt-15 grid gap-5 md:gap-8 lg:grid-cols-3">
+        <div className="mt-10 md:mt-15 grid gap-4 md:gap-6 lg:grid-cols-3">
           {PRODUCT_BLOCKS.map((block) => (
             <article
               key={block.label}
-              className="overview-block bg-muted-ink/10 p-5 opacity-0 md:p-6"
+              className="overview-block bg-muted-ink/7 p-5 opacity-0 md:p-6"
             >
               <h3 className="font-display text-2xl uppercase leading-none text-secondary-on-light-text md:text-3xl">
                 {block.label}

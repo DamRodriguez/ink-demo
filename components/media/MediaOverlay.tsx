@@ -17,7 +17,7 @@ export function MediaOverlay({
     <>
       <div
         className={clsx(
-          "pointer-events-none absolute inset-x-0 z-10 from-ink/70 to-transparent transition-opacity duration-300",
+          "pointer-events-none absolute inset-x-0 z-10 from-ink/80 to-transparent transition-opacity duration-300",
           {
             "-top-10 h-2/3 bg-gradient-to-b": !isBottom,
             "-bottom-2 h-1/2 bg-gradient-to-t": isBottom,
