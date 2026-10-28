@@ -17,7 +17,7 @@ export function MediaOverlay({
     <>
       <div
         className={clsx(
-          "pointer-events-none absolute inset-x-0 z-10 from-ink/80 to-transparent transition-opacity duration-300",
+          "pointer-events-none absolute inset-x-0 z-10 from-ink/90 to-transparent transition-opacity duration-300",
           {
             "-top-10 h-2/3 bg-gradient-to-b": !isBottom,
             "-bottom-2 h-1/2 bg-gradient-to-t": isBottom,
@@ -27,7 +27,7 @@ export function MediaOverlay({
       />
       <span
         className={clsx(
-          "pointer-events-none absolute z-10 font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.14em] text-soft-white/85 transition-opacity duration-300 m-2 md:m-4 backdrop-blur-[0.1rem] ",
+          "pointer-events-none absolute z-10 font-accent text-[0.5rem] md:text-xs uppercase tracking-[0.14em] text-soft-white/85 transition-opacity duration-300 m-2 md:m-4",
           {
             "left-0 top-0": position === "top-left",
             "right-0 top-0": position === "top-right",

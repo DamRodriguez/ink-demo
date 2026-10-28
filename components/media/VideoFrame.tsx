@@ -76,10 +76,10 @@ export function VideoFrame({
         <button
           type="button"
           aria-label={`Reproducir ${label}`}
-          className="absolute inset-0 z-[2] flex cursor-pointer items-center justify-center"
+          className="absolute inset-0 z-999 flex cursor-pointer items-center justify-center"
           onClick={() => setIsVideoMounted(true)}
         >
-          <span className="flex size-14 items-center justify-center rounded-full bg-[#fff] text-ink transition-transform duration-300 group-hover:scale-105 border border-muted-ink/20 drop-shadow-md">
+          <span className="flex size-14 items-center justify-center rounded-full bg-soft-white text-ink transition-transform duration-300 group-hover:scale-105 border border-muted-ink/20 drop-shadow-md">
             <Play
               aria-hidden="true"
               className="ml-1 size-5 fill-current stroke-0"
