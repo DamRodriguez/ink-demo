@@ -4,7 +4,7 @@ import { DemoImage } from "@/components/media/DemoImage";
 import { MediaOverlay } from "@/components/media/MediaOverlay";
 import { Video, VideoPlayer, VideoSkin } from "@videojs/react/video";
 import clsx from "clsx";
-import { Play } from "lucide-react";
+import { LoaderCircle, Play } from "lucide-react";
 import { useState, type CSSProperties } from "react";
 
 type VideoFrameProps = {
@@ -37,13 +37,17 @@ export function VideoFrame({
   const [isVideoMounted, setIsVideoMounted] = useState(false);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const shouldRenderVideo = Boolean(src && isVideoMounted);
+  const shouldShowVideoLoader = shouldRenderVideo && !isVideoVisible;
+  const shouldShowPlayButton = Boolean(src && !isVideoMounted);
+  const shouldHideMediaOverlay = isVideoMounted && isVideoPlaying;
 
   return (
     <figure
       className={`video-frame group relative isolate h-full min-h-0 w-full cursor-pointer overflow-hidden border border-soft-white/5 bg-muted-ink/20 ${className}`}
     >
       <DemoImage src={fallbackSrc} alt={alt} sizes={sizes} />
-      {src && isVideoMounted && (
+      {shouldRenderVideo && (
         <div
           className={clsx(
             "absolute inset-0 z-[1] transition-opacity duration-500 ease-out",
@@ -72,7 +76,19 @@ export function VideoFrame({
           </VideoPlayer>
         </div>
       )}
-      {src && !isVideoMounted && (
+      {shouldShowVideoLoader && (
+        <div
+          className="absolute inset-0 z-[2] flex items-center justify-center bg-ink/20"
+          role="status"
+          aria-label="Cargando video"
+        >
+          <LoaderCircle
+            aria-hidden="true"
+            className="size-8 animate-spin text-soft-white"
+          />
+        </div>
+      )}
+      {shouldShowPlayButton && (
         <button
           type="button"
           aria-label={`Reproducir ${label}`}
@@ -87,7 +103,7 @@ export function VideoFrame({
           </span>
         </button>
       )}
-      <MediaOverlay label={label} hidden={isVideoMounted && isVideoPlaying} />
+      <MediaOverlay label={label} hidden={shouldHideMediaOverlay} />
     </figure>
   );
 }
