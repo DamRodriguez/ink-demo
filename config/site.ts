@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Una web editorial y un administrador pensado para estudios de tatuajes, tatuadores independientes y equipos.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://ink-demo.vercel.app",
-  ogImage: "/images/icons/ink-and-soul.png",
+  ogImage: "/images/icons/ink-and-soul.webp",
   locale: "es_AR",
   creator: {
     name: "Damian Rodriguez",

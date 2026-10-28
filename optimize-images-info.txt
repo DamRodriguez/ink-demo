@@ -1,0 +1,16 @@
+- tener instalado Sharp: pnpm add -D sharp
+
+- configuración para optimizar calidad, bajar o subir webp_quality: 
+const MAX_WIDTH = 1920;
+const WEBP_QUALITY = 78;
+
+- tener el script en la raíz del proyecto y las imágenes dentro de public/images
+
+- las siguientes constantes dicen la carpeta inicial y la final:
+const INPUT_DIR = path.join(process.cwd(), "public", "images");
+const OUTPUT_DIR = path.join(process.cwd(), "public", "images-optimized");
+El destino es temporal: al finalizar, las imágenes optimizadas reemplazan a las
+originales dentro de public/images.
+
+- correr:
+node optimize-images.js

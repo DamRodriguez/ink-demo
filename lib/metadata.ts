@@ -42,9 +42,9 @@ export function createMetadata({
       telephone: false,
     },
     icons: {
-      icon: "/images/icons/ink-and-soul.png",
-      shortcut: "/images/icons/ink-and-soul.png",
-      apple: "/images/icons/ink-and-soul.png",
+      icon: "/images/icons/ink-and-soul.webp",
+      shortcut: "/images/icons/ink-and-soul.webp",
+      apple: "/images/icons/ink-and-soul.webp",
     },
     openGraph: {
       title: fullTitle,

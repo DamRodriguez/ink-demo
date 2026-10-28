@@ -6,17 +6,17 @@ export const ADMIN_FEATURES = [
       "Presentá a cada artista con su identidad, especialidades y trabajos para que el público conozca quién está detrás del estudio",
     media: [
       {
-        src: "/images/sections/showcase/admin/team/admin-list.png",
+        src: "/images/sections/showcase/admin/team/admin-list.webp",
         alt: "Listado de miembros de equipo en el administrador",
         label: "Miembros del equipo",
       },
       {
-        src: "/images/sections/showcase/admin/team/admin-form.png",
+        src: "/images/sections/showcase/admin/team/admin-form.webp",
         alt: "Editor de un miembro del equipo",
         label: "Crear y editar",
       },
       {
-        src: "/images/sections/showcase/admin/team/web-result.png",
+        src: "/images/sections/showcase/admin/team/web-result.webp",
         alt: "Vista pública del equipo del estudio",
         label: "Resultado en la web",
       },
@@ -29,17 +29,17 @@ export const ADMIN_FEATURES = [
       "Mostrá a tus clientes lo que tu estudio ofrece y cómo lo hace",
     media: [
       {
-        src: "/images/sections/showcase/admin/services/admin-list.png",
+        src: "/images/sections/showcase/admin/services/admin-list.webp",
         alt: "Listado de servicios dentro del administrador",
         label: "Listado de servicios",
       },
       {
-        src: "/images/sections/showcase/admin/services/admin-form.png",
+        src: "/images/sections/showcase/admin/services/admin-form.webp",
         alt: "Editor de servicios dentro del administrador",
         label: "Crear y editar",
       },
       {
-        src: "/images/sections/showcase/admin/services/web-result.png",
+        src: "/images/sections/showcase/admin/services/web-result.webp",
         alt: "Vista pública de los servicios del estudio",
         label: "Resultado en la web",
       },
@@ -52,17 +52,17 @@ export const ADMIN_FEATURES = [
       "Administrá tu portfolio, asociá cada trabajo con un artista y mostrale a cada visitante lo que tu estudio sabe hacer",
     media: [
       {
-        src: "/images/sections/showcase/admin/work/admin-list.png",
+        src: "/images/sections/showcase/admin/work/admin-list.webp",
         alt: "Listado de trabajos dentro del administrador",
         label: "Listado de trabajos",
       },
       {
-        src: "/images/sections/showcase/admin/work/admin-form.png",
+        src: "/images/sections/showcase/admin/work/admin-form.webp",
         alt: "Editor de un trabajo del portfolio",
         label: "Crear y editar",
       },
       {
-        src: "/images/sections/showcase/admin/work/web-result.png",
+        src: "/images/sections/showcase/admin/work/web-result.webp",
         alt: "Vista pública del portfolio del estudio",
         label: "Resultado en la web",
       },
@@ -75,17 +75,17 @@ export const ADMIN_FEATURES = [
       "Actualizá la información personal, los canales de contacto, la ubicación y los horarios desde un solo lugar",
     media: [
       {
-        src: "/images/sections/showcase/admin/config/admin-form.png",
+        src: "/images/sections/showcase/admin/config/admin-form.webp",
         alt: "Configuración general del administrador",
         label: "Información del estudio",
       },
       {
-        src: "/images/sections/showcase/admin/config/web-result-1.png",
+        src: "/images/sections/showcase/admin/config/web-result-1.webp",
         alt: "Configuración de contacto y horarios",
         label: "Resultado en la web",
       },
       {
-        src: "/images/sections/showcase/admin/config/web-result-2.png",
+        src: "/images/sections/showcase/admin/config/web-result-2.webp",
         alt: "Configuración de contacto y horarios",
         label: "Resultado en la web",
       },

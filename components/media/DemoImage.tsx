@@ -8,7 +8,7 @@ type DemoImageProps = {
   priority?: boolean;
 };
 
-const PLACEHOLDER_SRC = "/images/placeholder.svg";
+const PLACEHOLDER_SRC = "/images/placeholder.webp";
 
 export function DemoImage({
   src,

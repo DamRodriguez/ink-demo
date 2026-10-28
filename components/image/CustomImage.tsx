@@ -23,7 +23,7 @@ export default function CustomImage({
       alt={alt}
       fill={fill}
       priority={priority}
-      blurDataURL="/images/placeholder.svg"
+      blurDataURL="/images/placeholder.webp"
       loading={priority ? undefined : (loading ?? "lazy")}
       placeholder={placeholder}
       className={clsx(

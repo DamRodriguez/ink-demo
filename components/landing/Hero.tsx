@@ -9,11 +9,11 @@ import { useRef } from "react";
 
 const HERO_MEDIA = {
   primary: {
-    src: "/images/sections/hero/web.png",
+    src: "/images/sections/hero/web.webp",
     alt: "Vista de la web pública de un estudio de tatuajes",
   },
   secondary: {
-    src: "/images/sections/hero/admin.png",
+    src: "/images/sections/hero/admin.webp",
     alt: "Vista del administrador privado de la web pública de un estudio de tatuajes",
   },
 } as const;
