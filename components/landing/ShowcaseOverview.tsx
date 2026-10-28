@@ -10,22 +10,22 @@ import { useRef } from "react";
 
 const SHOWCASE_MEDIA = {
   websiteDesktop: {
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    src: "/videos/sections/showcase/overview/web-desktop-v2.mp4",
     fallbackSrc: "/images/sections/showcase/overview/web-desktop.webp",
     alt: "Recorrido en video por la web pública en escritorio",
   },
   websiteMobile: {
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    src: "/videos/sections/showcase/overview/web-mobile-v2.mp4",
     fallbackSrc: "/images/sections/showcase/overview/web-mobile.webp",
     alt: "Recorrido en video por la web pública en móvil",
   },
   adminMobile: {
-    src: "/videos/sections/showcase/overview/admin-mobile.mp4",
+    src: "/videos/sections/showcase/overview/admin-mobile-v2.mp4",
     fallbackSrc: "/images/sections/showcase/overview/admin-mobile.webp",
     alt: "Recorrido del administrador de Ink & Soul en móvil",
   },
   adminDesktop: {
-    src: "/videos/sections/showcase/overview/admin-desktop.mp4",
+    src: "/videos/sections/showcase/overview/admin-desktop-v2.mp4",
     fallbackSrc: "/images/sections/showcase/overview/admin-desktop.webp",
     alt: "Recorrido del administrador de Ink & Soul en escritorio",
   },
