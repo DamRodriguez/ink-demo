@@ -6,9 +6,9 @@ const logoUrl = `${siteUrl}${logoPath}`;
 
 export const siteConfig = {
   name: "Ink Demo",
-  title: "Ink Demo | La web de tu estudio, bajo tu control",
+  title: "Ink Demo | Una experiencia digital para tu estudio",
   description:
-    "Una web inmersiva y un administrador privado con acceso seguro, pensado para estudios de tatuajes, tatuadores independientes y equipos.",
+    "Una web inmersiva y un administrador privado para estudios de tatuajes, artistas independientes y equipos.",
   url: siteUrl,
   ogImage: `${process.env.NEXT_PUBLIC_SITE_URL || "https://1nk-demo.vercel.app"}/images/logo/ink-and-soul-full.webp`,
   logo: logoUrl,
