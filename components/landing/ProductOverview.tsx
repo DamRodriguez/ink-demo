@@ -110,7 +110,7 @@ export function ProductOverview() {
           Diseño & Adaptabilidad
         </SectionLabel>
         <div className="grid gap-y-6 gap-x-24 2xl:grid-cols-[0.7fr_1.3fr] 2xl:items-end">
-          <h2 className="font-display text-3xl uppercase leading-[0.9] md:text-5xl">
+          <h2 className="font-display text-4xl uppercase leading-[0.9] md:text-5xl">
             <span className="block overflow-y-clip">
               <span className="overview-title-line block opacity-0">
                 Mas que una interfaz
@@ -141,7 +141,7 @@ export function ProductOverview() {
             </p>
           </div>
         </div>
-        <div className="common-section-space grid gap-4 md:gap-6 lg:grid-cols-3">
+        <div className="common-section-space grid gap-10 md:gap-14 lg:grid-cols-3">
           {PRODUCT_BLOCKS.map((block) => (
             <article key={block.label} className="overview-block opacity-0">
               <h3 className="font-display text-2xl uppercase leading-none text-primary-on-light-text md:text-3xl">
