@@ -1,21 +1,25 @@
 import { contactUrls, siteConfig } from "@/config/site";
 
 export function SeoSchema() {
-  const logo = new URL(siteConfig.ogImage, siteConfig.url).toString();
+  const logo = new URL(siteConfig.logo, siteConfig.url).toString();
+  const image = new URL(siteConfig.ogImage, siteConfig.url).toString();
+  const siteUrl = new URL(siteConfig.url).toString();
   const organization = {
     "@type": "Organization",
     "@id": `${siteConfig.url}#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
     logo,
-    image: logo,
+    image,
     description: siteConfig.description,
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      telephone: siteConfig.whatsappLabel,
-      url: contactUrls.whatsapp,
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: siteConfig.whatsappLabel,
+        url: contactUrls.whatsapp,
+      },
+    ],
   };
 
   const softwareApplication = {
@@ -26,18 +30,24 @@ export function SeoSchema() {
     description: siteConfig.description,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    audience: {
+      "@type": "Audience",
+      audienceType:
+        "Tatuadores independientes, estudios de tatuajes y equipos de trabajo",
+    },
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
       url: contactUrls.whatsapp,
     },
+    image,
   };
 
   const website = {
     "@type": "WebSite",
     "@id": `${siteConfig.url}#website`,
     name: siteConfig.name,
-    url: siteConfig.url,
+    url: siteUrl,
     description: siteConfig.description,
     publisher: { "@id": `${siteConfig.url}#organization` },
     inLanguage: siteConfig.locale,
@@ -46,7 +56,7 @@ export function SeoSchema() {
   const webpage = {
     "@type": "WebPage",
     "@id": `${siteConfig.url}#webpage`,
-    url: siteConfig.url,
+    url: siteUrl,
     name: siteConfig.title,
     description: siteConfig.description,
     isPartOf: { "@id": `${siteConfig.url}#website` },

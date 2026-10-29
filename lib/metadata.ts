@@ -34,6 +34,8 @@ export function createMetadata({
     ],
     creator: siteConfig.creator.name,
     publisher: siteConfig.name,
+    applicationName: siteConfig.name,
+    category: siteConfig.category,
     metadataBase: new URL(siteConfig.url),
     alternates: { canonical: url },
     formatDetection: {
@@ -42,9 +44,12 @@ export function createMetadata({
       telephone: false,
     },
     icons: {
-      icon: "/images/icons/ink-and-soul.webp",
-      shortcut: "/images/icons/ink-and-soul.webp",
-      apple: "/images/icons/ink-and-soul.webp",
+      icon: [
+        { url: "/images/icons/ink-and-soul-192.png", sizes: "192x192" },
+        { url: "/images/icons/ink-and-soul-512.png", sizes: "512x512" },
+      ],
+      shortcut: "/images/icons/ink-and-soul-192.png",
+      apple: "/images/icons/ink-and-soul-192.png",
     },
     openGraph: {
       title: fullTitle,
@@ -56,8 +61,8 @@ export function createMetadata({
       images: [
         {
           url: imageUrl,
-          width: 1200,
-          height: 630,
+          width: siteConfig.ogImageWidth,
+          height: siteConfig.ogImageHeight,
           alt: title ?? siteConfig.name,
         },
       ],
@@ -67,6 +72,12 @@ export function createMetadata({
       title: fullTitle,
       description,
       images: [imageUrl],
+      ...(siteConfig.twitterHandle
+        ? {
+            creator: siteConfig.twitterHandle,
+            site: siteConfig.twitterHandle,
+          }
+        : {}),
     },
     robots: {
       index: !noIndex,

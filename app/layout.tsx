@@ -5,6 +5,7 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import { SeoSchema } from "@/components/seo/SeoSchema";
 import { createMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
+import type { Viewport } from "next";
 import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 
 const fontBase = Hanken_Grotesk({
@@ -20,6 +21,11 @@ const fontAccent = JetBrains_Mono({
 });
 
 export const metadata: Metadata = createMetadata();
+
+export const viewport: Viewport = {
+  themeColor: "#141414",
+  colorScheme: "dark",
+};
 
 export default function RootLayout({
   children,
