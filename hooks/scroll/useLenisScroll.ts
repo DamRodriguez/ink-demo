@@ -7,6 +7,12 @@ import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let activeLenis: Lenis | null = null;
+
+export function getLenis() {
+  return activeLenis;
+}
+
 export function useLenisScroll() {
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -41,6 +47,7 @@ export function useLenisScroll() {
         smoothWheel: true,
         syncTouch: false,
       });
+      activeLenis = lenis;
       lenis.scrollTo(0, { immediate: true });
 
       lenis.on("scroll", ScrollTrigger.update);
@@ -66,6 +73,9 @@ export function useLenisScroll() {
       isCancelled = true;
       removeTicker?.();
       lenis?.destroy();
+      if (activeLenis === lenis) {
+        activeLenis = null;
+      }
     };
   }, [isDesktop]);
 }
