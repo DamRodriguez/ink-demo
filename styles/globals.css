@@ -50,6 +50,12 @@ body {
   @apply h-full w-full;
 }
 
+.video-frame .media-skin:fullscreen video,
+.video-frame video:fullscreen {
+  aspect-ratio: 16 / 9;
+  object-fit: contain !important;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .video-frame media-controls,
   .video-frame .video-controls,
