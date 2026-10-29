@@ -10,7 +10,7 @@ export const siteConfig = {
   description:
     "Una web inmersiva y un administrador privado con acceso seguro, pensado para estudios de tatuajes, tatuadores independientes y equipos.",
   url: siteUrl,
-  ogImage: logoUrl,
+  ogImage: `${process.env.NEXT_PUBLIC_SITE_URL || "https://1nk-demo.vercel.app"}/images/logo/ink-and-soul-full.webp`,
   logo: logoUrl,
   ogImageWidth: 1200,
   ogImageHeight: 630,
