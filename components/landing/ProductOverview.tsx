@@ -9,7 +9,7 @@ const PRODUCT_BLOCKS = [
     label: "Presencia digital",
     description: (
       <>
-        Ink Demo presenta una <span className="text-ink">web pública</span> y un{" "}
+        Ink Demo presenta una <span className="text-ink">web</span> y un{" "}
         <span className="text-ink">administrador</span> pensado para el día a
         día de un estudio de tatuajes. Mostrá tu imágen, trabajo, artistas,
         servicios y datos de contacto con una experiencia pensada para llamar la
