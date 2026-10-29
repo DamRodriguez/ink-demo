@@ -44,7 +44,7 @@ export function AdminFeatureBlock({
           {description}
         </p>
       </div>
-      <div className="mt-6 md:mt-8 grid gap-5 md:grid-cols-3">
+      <div className="mt-6 md:mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {media.map((item, index) => (
           <div
             key={item.label + index}

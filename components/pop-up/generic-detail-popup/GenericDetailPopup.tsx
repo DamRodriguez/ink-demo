@@ -83,7 +83,7 @@ export function GenericDetailPopup({
     <GenericPopup
       layoutId={`${layoutPrefix}-card-${id}`}
       onClose={onClose}
-      className="w-[min(90vw,64rem)]"
+      className="w-[min(90vw,70rem)]"
     >
       <div className="mb-3 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
         <div className="min-w-0">

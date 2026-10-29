@@ -11,9 +11,14 @@ export const ADMIN_FEATURES = [
         label: "Miembros del equipo",
       },
       {
-        src: "/images/sections/showcase/admin/team/admin-form.webp",
-        alt: "Editor de un miembro del equipo",
-        label: "Crear y editar",
+        src: "/images/sections/showcase/admin/team/admin-edit-form.webp",
+        alt: "Formulario para editar un miembro del equipo",
+        label: "Editar miembro",
+      },
+      {
+        src: "/images/sections/showcase/admin/team/admin-create-form.webp",
+        alt: "Formulario para crear un miembro del equipo",
+        label: "Crear miembro",
       },
       {
         src: "/images/sections/showcase/admin/team/web-result.webp",
@@ -34,9 +39,14 @@ export const ADMIN_FEATURES = [
         label: "Listado de servicios",
       },
       {
-        src: "/images/sections/showcase/admin/services/admin-form.webp",
-        alt: "Editor de servicios dentro del administrador",
-        label: "Crear y editar",
+        src: "/images/sections/showcase/admin/services/admin-edit-form.webp",
+        alt: "Formulario para editar un servicio dentro del administrador",
+        label: "Editar servicio",
+      },
+      {
+        src: "/images/sections/showcase/admin/services/admin-create-form.webp",
+        alt: "Formulario para crear un servicio dentro del administrador",
+        label: "Crear servicio",
       },
       {
         src: "/images/sections/showcase/admin/services/web-result.webp",
@@ -57,9 +67,14 @@ export const ADMIN_FEATURES = [
         label: "Listado de trabajos",
       },
       {
-        src: "/images/sections/showcase/admin/work/admin-form.webp",
-        alt: "Editor de un trabajo del portfolio",
-        label: "Crear y editar",
+        src: "/images/sections/showcase/admin/work/admin-edit-form.webp",
+        alt: "Formulario para editar un trabajo del portfolio",
+        label: "Editar trabajo",
+      },
+      {
+        src: "/images/sections/showcase/admin/work/admin-create-form.webp",
+        alt: "Formulario para crear un trabajo del portfolio",
+        label: "Crear trabajo",
       },
       {
         src: "/images/sections/showcase/admin/work/web-result.webp",
