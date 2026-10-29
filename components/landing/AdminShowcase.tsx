@@ -81,7 +81,7 @@ export function AdminShowcase() {
           manera inmediata
         </p>
       </div>
-      <div className="mt-16 space-y-16 md:mt-24 md:space-y-24">
+      <div className="common-section-space space-y-24 md:space-y-26">
         {ADMIN_FEATURES.map((feature) => (
           <AdminFeatureBlock key={feature.title} {...feature} />
         ))}

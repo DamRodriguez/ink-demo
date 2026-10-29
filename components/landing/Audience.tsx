@@ -74,7 +74,7 @@ export function Audience() {
       ref={sectionRef}
       className="bg-paper-deep text-primary-on-light-text"
     >
-      <div className="site-size horizontal-padding vertical-padding grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="site-size horizontal-padding vertical-padding grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="audience-reveal opacity-0">
           <SectionLabel className="!text-primary-on-dark-text">
             Hecho para crecer con vos

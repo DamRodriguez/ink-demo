@@ -90,7 +90,7 @@ export function GenericDetailPopup({
           <p className="font-accent text-xs uppercase tracking-[0.14em] text-secondary-on-dark-text md:text-sm">
             {currentIndex + 1} / {gallery.length}
           </p>
-          <h2 className="mt-1 truncate font-display text-xl leading-none text-primary-on-dark-text md:text-3xl">
+          <h2 className="mt-1 truncate font-display text-xl text-primary-on-dark-text md:text-3xl">
             {title}
           </h2>
           <AnimatePresence mode="wait" initial={false}>
@@ -100,7 +100,7 @@ export function GenericDetailPopup({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="mt-2 min-w-0 truncate font-accent text-[0.6rem] uppercase tracking-[0.14em] text-primary-on-dark-text/80 md:text-sm"
+              className="mt-1 min-w-0 truncate font-accent text-[0.6rem] uppercase tracking-[0.14em] text-primary-on-dark-text/80 md:text-sm"
             >
               {currentMedia.label}
             </motion.p>

@@ -141,13 +141,10 @@ export function ProductOverview() {
             </p>
           </div>
         </div>
-        <div className="mt-10 md:mt-15 grid gap-4 md:gap-6 lg:grid-cols-3">
+        <div className="common-section-space grid gap-4 md:gap-6 lg:grid-cols-3">
           {PRODUCT_BLOCKS.map((block) => (
-            <article
-              key={block.label}
-              className="overview-block bg-muted-ink/7 p-5 opacity-0 md:p-6"
-            >
-              <h3 className="font-display text-2xl uppercase leading-none text-secondary-on-light-text md:text-3xl">
+            <article key={block.label} className="overview-block opacity-0">
+              <h3 className="font-display text-2xl uppercase leading-none text-primary-on-light-text md:text-3xl">
                 {block.label}
               </h3>
               <p className="mt-4 max-w-md text-base leading-relaxed text-secondary-on-light-text md:text-lg">

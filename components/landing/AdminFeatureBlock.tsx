@@ -33,18 +33,18 @@ export function AdminFeatureBlock({
   }));
 
   return (
-    <article className="showcase-item pt-8">
-      <div className="grid gap-y-6 gap-x-20 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
+    <article className="showcase-item">
+      <div className="grid gap-y-3 gap-x-20 lg:grid-cols-[0.65fr_1.45fr] lg:items-end">
         <div>
-          <h3 className="font-display text-4xl leading-[0.85] md:text-5xl">
+          <h3 className="font-display text-3xl leading-[0.85] md:text-4xl">
             {title}
           </h3>
         </div>
-        <p className="max-w-xl text-base leading-relaxed text-secondary-on-dark-text md:text-lg">
+        <p className="max-w-xl text-sm leading-relaxed text-secondary-on-dark-text md:text-lg">
           {description}
         </p>
       </div>
-      <div className="mt-8 grid gap-5 md:grid-cols-3">
+      <div className="mt-6 md:mt-8 grid gap-5 md:grid-cols-3">
         {media.map((item, index) => (
           <div
             key={item.label + index}
