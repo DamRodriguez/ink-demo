@@ -74,7 +74,7 @@ export function AdminShowcase() {
         </h2>
         <p className="showcase-item max-w-xl text-base md:text-xl leading-relaxed text-secondary-on-dark-text">
           El administrador{" "}
-          <span className="text-primary-on-dark-text/90">
+          <span className="text-primary-on-dark-text-accent">
             gestiona la información
           </span>{" "}
           detrás de escena para que cada cambio llegue a la web pública de

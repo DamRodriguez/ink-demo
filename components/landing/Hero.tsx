@@ -113,8 +113,15 @@ export function Hero() {
               </span>
             </h1>
             <p className="hero-reveal ml-[12%] mt-4 max-w-[16rem] sm:max-w-[29rem] text-base md:text-xl leading-[1.35] text-secondary-on-dark-text opacity-0 sm:mt-6 sm:leading-relaxed ">
-              Una web con identidad propia, animaciones únicas y el control para
-              actualizarla cuando quieras
+              Una web con{" "}
+              <span className="text-primary-on-dark-text-accent">
+                identidad propia
+              </span>
+              ,{" "}
+              <span className="text-primary-on-dark-text-accent">
+                animaciones únicas
+              </span>{" "}
+              y el control para actualizarla cuando quieras
             </p>
           </div>
           <div className="relative min-h-0 min-w-0 w-full aspect-[16/9] md:mt-4 md:aspect-[3/1] md:h-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:aspect-[4/5] lg:max-h-[34rem]">

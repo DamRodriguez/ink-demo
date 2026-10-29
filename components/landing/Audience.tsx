@@ -101,7 +101,7 @@ export function Audience() {
           {AUDIENCE_ITEMS.map(({ number, title, description }) => (
             <article key={number} className="audience-card">
               <div className="text-primary-on-muted-text">
-                <span className="font-accent text-lg md:text-xl text-secondary-on-muted-text/50">
+                <span className="font-accent text-base md:text-lg text-secondary-on-muted-text/50">
                   {number}
                 </span>
                 <h3 className="font-display text-2xl uppercase">{title}</h3>

@@ -88,7 +88,7 @@ export function ShowcaseOverview() {
         </h2>
         <p className="showcase-item max-w-md text-base md:text-xl leading-relaxed text-secondary-on-dark-text">
           Una{" "}
-          <span className="text-primary-on-dark-text/90">
+          <span className="text-primary-on-dark-text-accent">
             presencia pública clara
           </span>
           , visual y fácil de recorrer. Con tu trabajo, tus artistas y tu manera

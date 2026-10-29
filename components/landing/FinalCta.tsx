@@ -80,7 +80,8 @@ export function FinalCta() {
         <p className="cta-phase mt-10 max-w-lg text-base md:text-xl leading-relaxed text-secondary-on-dark-text opacity-0">
           La demo usa datos e imágenes ficticias.
           <br />
-          El producto real se adapta a la identidad, estructura y necesidades.
+          El producto real se adapta a la identidad, estructura y necesidades de
+          tu estudio.
         </p>
         <div className="cta-actions mt-8 flex flex-wrap justify-center gap-4 opacity-0">
           <WhatsAppButton>Lo quiero para mi estudio</WhatsAppButton>
@@ -106,7 +107,7 @@ export function FinalCta() {
           >
             <RollText
               text="damrod"
-              className="font-display uppercase"
+              className="uppercase"
               mainClassName="text-primary-on-dark-text"
               hoverClassName="text-secondary-on-dark-text normal-case"
             />

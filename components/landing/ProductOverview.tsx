@@ -42,6 +42,16 @@ const PRODUCT_BLOCKS = [
       </>
     ),
   },
+  {
+    label: "Acceso y seguridad",
+    description: (
+      <>
+        El <span className="text-ink">administrador privado</span> de tu web
+        cuenta con autenticación y acceso protegido para que vos y tu equipo
+        puedan gestionar el contenido con tranquilidad.
+      </>
+    ),
+  },
 ] as const;
 
 export function ProductOverview() {
@@ -141,7 +151,7 @@ export function ProductOverview() {
             </p>
           </div>
         </div>
-        <div className="common-section-space grid gap-10 md:gap-14 lg:grid-cols-3">
+        <div className="common-section-space grid gap-10 xl:gap-14 xl:grid-cols-2 2xl:grid-cols-4">
           {PRODUCT_BLOCKS.map((block) => (
             <article key={block.label} className="overview-block opacity-0">
               <h3 className="font-display text-2xl uppercase leading-none text-primary-on-light-text md:text-3xl">

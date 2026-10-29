@@ -7,6 +7,9 @@
   --color-muted-ink: #969696;
   --color-muted-ink-opaque: rgb(from var(--color-muted-ink) r g b / 0.4);
   --color-primary-on-dark-text: #f7f7e1;
+  --color-primary-on-dark-text-accent: rgb(
+    from var(--color-primary-on-dark-text) r g b / 0.85
+  );
   --color-secondary-on-dark-text: #999999;
   --color-primary-on-light-text: #303030;
   --color-secondary-on-light-text: #626262;
