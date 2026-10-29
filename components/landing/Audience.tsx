@@ -7,18 +7,21 @@ import { useRef } from "react";
 const AUDIENCE_ITEMS = [
   {
     number: "01",
-    title: "Independientes",
-    description: "Una presencia propia para mostrar tu trabajo",
+    title: "Si trabajás solo",
+    description:
+      "Mostrá tu imágen profesional y organizá tu trabajo de manera simple",
   },
   {
     number: "02",
     title: "Estudios",
-    description: "Una web clara para recibir mejores consultas",
+    description:
+      "Gestioná a tus artistas, servicios, trabajos y demás desde un solo lugar",
   },
   {
     number: "03",
-    title: "Equipos",
-    description: "Una identidad compartida que ordena el contenido",
+    title: "Equipos grandes",
+    description:
+      "Organizá tu equipo y trabajo de manera eficiente y profesional",
   },
 ] as const;
 
