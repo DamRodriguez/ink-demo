@@ -67,7 +67,7 @@ export function FinalCta() {
         <SectionLabel dark className="cta-label opacity-0">
           ¿Listo para verlo en tu estudio?
         </SectionLabel>
-        <h2 className="max-w-5xl font-display text-[16vw] leading-[0.75] tracking-[-.07em] md:text-[10vw]">
+        <h2 className="font-display text-[clamp(3.8rem,10vw,12rem)] leading-[0.75] tracking-[-.07em]">
           <span className="block overflow-y-clip">
             <span className="cta-title-line block opacity-0">Hablemos</span>
           </span>
