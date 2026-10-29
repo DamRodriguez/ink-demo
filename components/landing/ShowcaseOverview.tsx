@@ -16,12 +16,12 @@ const SHOWCASE_MEDIA = {
   },
   websiteMobile: {
     src: "/videos/sections/showcase/overview/web-mobile-v2.mp4",
-    fallbackSrc: "/images/sections/showcase/overview/web-mobile.webp",
+    fallbackSrc: "/images/sections/showcase/overview/web-mobile-v2.webp",
     alt: "Recorrido en video por la web pública en móvil",
   },
   adminMobile: {
     src: "/videos/sections/showcase/overview/admin-mobile-v2.mp4",
-    fallbackSrc: "/images/sections/showcase/overview/admin-mobile.webp",
+    fallbackSrc: "/images/sections/showcase/overview/admin-mobile-v2.webp",
     alt: "Recorrido del administrador de Ink & Soul en móvil",
   },
   adminDesktop: {
@@ -108,7 +108,7 @@ export function ShowcaseOverview() {
             />
           </div>
           <div className="flex flex-col gap-5 md:h-full md:justify-end">
-            <div className="showcase-item aspect-[3/4] md:flex-1 md:aspect-auto">
+            <div className="showcase-item aspect-[9/16] md:flex-1 md:aspect-auto">
               <VideoFrame
                 src={SHOWCASE_MEDIA.websiteMobile.src}
                 fallbackSrc={SHOWCASE_MEDIA.websiteMobile.fallbackSrc}
@@ -135,7 +135,7 @@ export function ShowcaseOverview() {
           </div>
         </div>
         <div className="grid gap-5 md:items-stretch md:grid-cols-[0.55fr_1.65fr]">
-          <div className="showcase-item aspect-[2/3] md:h-full md:aspect-auto">
+          <div className="showcase-item aspect-[9/16] md:h-full md:aspect-auto">
             <VideoFrame
               src={SHOWCASE_MEDIA.adminMobile.src}
               fallbackSrc={SHOWCASE_MEDIA.adminMobile.fallbackSrc}
