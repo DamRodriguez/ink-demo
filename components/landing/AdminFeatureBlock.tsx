@@ -63,7 +63,7 @@ export function AdminFeatureBlock({
               role="button"
               tabIndex={0}
               aria-label={`Abrir ${item.label}`}
-              className="group relative h-full w-full cursor-pointer overflow-hidden border border-soft-white/10 hover:border-soft-white/30 transition-colors duration-400 ease-in-out"
+              className="group/admin-media relative h-full w-full cursor-pointer overflow-hidden"
             >
               <motion.div
                 layoutId={`${popupId}-image-${index}`}
@@ -72,7 +72,7 @@ export function AdminFeatureBlock({
                   ease: "easeInOut",
                   duration: 0.5,
                 }}
-                className="relative h-full w-full overflow-hidden"
+                className="relative h-full w-full overflow-hidden border border-soft-white/10 transition-colors duration-400 ease-in-out group-hover/admin-media:border-soft-white/30"
               >
                 <DemoImage
                   src={item.src}
@@ -81,7 +81,7 @@ export function AdminFeatureBlock({
                 />
                 <MediaOverlay label={item.label} position="top-left" />
               </motion.div>
-              <div className="pointer-events-none absolute inset-0 z-50 hidden items-center justify-center bg-ink/60 opacity-0 transition-opacity duration-400 ease-in-out group-hover:opacity-100 md:flex">
+              <div className="pointer-events-none absolute inset-0 z-50 hidden items-center justify-center bg-ink/60 opacity-0 transition-opacity duration-400 ease-in-out group-hover/admin-media:opacity-100 md:flex">
                 <Expand
                   aria-hidden="true"
                   className="text-soft-white size-8"

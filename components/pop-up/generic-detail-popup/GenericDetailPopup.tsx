@@ -100,7 +100,7 @@ export function GenericDetailPopup({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="mt-2 min-w-0 truncate font-accent text-xs uppercase tracking-[0.14em] text-primary-on-dark-text/80 md:text-sm"
+              className="mt-2 min-w-0 truncate font-accent text-[0.6rem] uppercase tracking-[0.14em] text-primary-on-dark-text/80 md:text-sm"
             >
               {currentMedia.label}
             </motion.p>
@@ -162,7 +162,7 @@ export function GenericDetailPopup({
                 aria-label={`Ver imagen ${index + 1} de ${gallery.length}`}
                 aria-current={currentIndex === index}
                 className={clsx(
-                  "size-2 cursor-pointer rounded-full border border-soft-white/30 transition-[background-color,transform]",
+                  "size-1.5 md:size-2 cursor-pointer rounded-full border border-soft-white/30 transition-[background-color,transform]",
                   currentIndex === index
                     ? "scale-100 bg-soft-white"
                     : "scale-90 bg-soft-white/40 hover:bg-soft-white/70",
