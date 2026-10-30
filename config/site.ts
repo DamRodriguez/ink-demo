@@ -6,7 +6,7 @@ const logoUrl = `${siteUrl}${logoPath}`;
 
 export const siteConfig = {
   name: "Ink Demo",
-  title: "Ink Demo | Una experiencia digital para tu estudio",
+  title: "Ink Demo | Una experiencia digital para tu estudio de tatuajes",
   description:
     "Una web inmersiva y un administrador privado para estudios de tatuajes, artistas independientes y equipos.",
   url: siteUrl,
