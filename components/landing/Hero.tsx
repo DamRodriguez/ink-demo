@@ -154,7 +154,7 @@ export function Hero() {
               href={contactUrls.publicWebsite}
               external
               variant="outline"
-              text="Ver sitio web"
+              text="Visitar el sitio web"
             >
               <span className="hidden" />
             </LinkButton>
