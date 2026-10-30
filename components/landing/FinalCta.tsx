@@ -6,7 +6,6 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { contactUrls, siteConfig } from "@/config/site";
 import { useScrollAnimations } from "@/hooks/gsap/useScrollAnimations";
-import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -91,10 +90,7 @@ export function FinalCta() {
             variant="outline"
             text="Ver la experiencia web"
           >
-            <ArrowUpRight
-              aria-hidden="true"
-              className="size-4 transition-transform duration-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
+            <span className="hidden" />
           </LinkButton>
         </div>
         <div className="cta-phase mt-20 md:mt-10 font-accent text-base md:text-lg text-secondary-on-dark-text opacity-0">

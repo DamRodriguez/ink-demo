@@ -2,8 +2,10 @@
 
 import { DemoImage } from "@/components/media/DemoImage";
 import { MediaOverlay } from "@/components/media/MediaOverlay";
+import { LinkButton } from "@/components/ui/buttons/LinkButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { contactUrls } from "@/config/site";
 import { useScrollAnimations } from "@/hooks/gsap/useScrollAnimations";
 import { useRef } from "react";
 
@@ -146,8 +148,16 @@ export function Hero() {
               />
             </div>
           </div>
-          <div className="hero-cta sm:ml-[12%] mt-4 opacity-0 md:mt-8 lg:col-start-1 lg:row-start-2">
+          <div className="hero-cta sm:ml-[12%] gap-4 flex flex-wrap mt-4 opacity-0 md:mt-8 lg:col-start-1 lg:row-start-2">
             <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
+            <LinkButton
+              href={contactUrls.publicWebsite}
+              external
+              variant="outline"
+              text="Ver sitio web"
+            >
+              <span className="hidden" />
+            </LinkButton>
           </div>
         </div>
       </div>
