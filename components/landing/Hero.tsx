@@ -52,14 +52,17 @@ export function Hero() {
         },
       },
       ".hero-cta": {
+        individual: true,
+        staggered: true,
         disableScrollTrigger: true,
         from: { y: 18, scale: 0.98, opacity: 0 },
         to: {
           y: 0,
           scale: 1,
           opacity: 1,
-          duration: 0.8,
-          delay: 0.6,
+          duration: 1.5,
+          delay: 0.3,
+          stagger: 0.3,
           ease: "power3.out",
         },
       },
@@ -148,16 +151,20 @@ export function Hero() {
               />
             </div>
           </div>
-          <div className="hero-cta sm:ml-[12%] gap-4 flex flex-wrap opacity-0 lg:col-start-1 lg:row-start-2 z-20">
-            <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
-            <LinkButton
-              href={contactUrls.publicWebsite}
-              external
-              variant="outline"
-              text="Visitar el sitio web"
-            >
-              <span className="hidden" />
-            </LinkButton>
+          <div className="sm:ml-[12%] xl:mt-4 gap-4 flex flex-wrap lg:col-start-1 lg:row-start-2 z-20">
+            <div className="hero-cta opacity-0">
+              <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
+            </div>
+            <div className="hero-cta opacity-0">
+              <LinkButton
+                href={contactUrls.publicWebsite}
+                external
+                variant="outline"
+                text="Visitar el sitio web"
+              >
+                <span className="hidden" />
+              </LinkButton>
+            </div>
           </div>
         </div>
       </div>
