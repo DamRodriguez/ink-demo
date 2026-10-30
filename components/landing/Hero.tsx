@@ -148,7 +148,7 @@ export function Hero() {
               />
             </div>
           </div>
-          <div className="hero-cta sm:ml-[12%] gap-4 flex flex-wrap opacity-0 md:mt-10 lg:col-start-1 lg:row-start-2">
+          <div className="hero-cta sm:ml-[12%] gap-4 flex flex-wrap opacity-0 lg:col-start-1 lg:row-start-2 z-20">
             <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
             <LinkButton
               href={contactUrls.publicWebsite}
