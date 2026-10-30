@@ -100,7 +100,7 @@ export function Hero() {
         <SectionLabel dark className="hero-label opacity-0">
           Producto digital para estudios de tatuajes
         </SectionLabel>
-        <div className="grid min-h-0 items-center gap-10 md:gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12 xl:grid-cols-[0.8fr_1.2fr] xl:gap-x-30 xl:gap-y-10">
+        <div className="grid min-h-0 items-center gap-6 md:gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-12 xl:grid-cols-[0.8fr_1.2fr] xl:gap-x-30 xl:gap-y-10">
           <div className="lg:col-start-1 lg:row-start-1">
             <h1 className="font-display text-[clamp(4rem,10vw,9rem)] leading-[0.74] tracking-[-.07em] text-primary-on-dark-text">
               <span className="block overflow-y-clip">
@@ -148,7 +148,7 @@ export function Hero() {
               />
             </div>
           </div>
-          <div className="hero-cta sm:ml-[12%] gap-4 flex flex-wrap mt-4 opacity-0 md:mt-8 lg:col-start-1 lg:row-start-2">
+          <div className="hero-cta sm:ml-[12%] gap-4 flex flex-wrap opacity-0 md:mt-10 lg:col-start-1 lg:row-start-2">
             <WhatsAppButton>Quiero mi propia experiencia</WhatsAppButton>
             <LinkButton
               href={contactUrls.publicWebsite}
